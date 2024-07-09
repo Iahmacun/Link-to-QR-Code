@@ -22,11 +22,11 @@ Projenin yerel bir kopyasını çalıştırmak için şu adımları izleyin:
 
 1. Bu repository'yi klonlayın:
     ```sh
-    git clone https://github.com/kullaniciadi/qr-kod-uretici.git
+    git clone https://github.com/Iahmacun/Link-to-QR-Code
     ```
 2. Proje dizinine gidin:
     ```sh
-    cd qr-kod-uretici
+    cd Link-to-QR-Code
     ```
 
 ## Kullanım
