@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link to QR Code</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #333;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
+        }
+        input:focus {
+            border-color: #e53935;
+            outline: none;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #e53935;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #b71c1c;
+        }
+        #qrcode {
+            margin-top: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .footer {
+            margin-top: 20px;
+            color: #fff;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Link to QR Code</h1>
+        <input type="text" id="linkInput" placeholder="Linki buraya girin">
+        <button onclick="generateQRCode()">QR Kodu Oluştur</button>
+        <div id="qrcode"></div>
+    </div>
+    <div class="footer">
+        Lahmacun
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        function generateQRCode() {
+            var link = document.getElementById("linkInput").value;
+            var qrcodeContainer = document.getElementById("qrcode");
+            qrcodeContainer.innerHTML = ""; 
+
+            if (link) {
+                new QRCode(qrcodeContainer, link);
+            }
+        }
+    </script>
+</body>
+</html>
